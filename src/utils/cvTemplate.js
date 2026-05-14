@@ -269,6 +269,8 @@ export const createCvHtml = (data) => `<!DOCTYPE html>
       .timeline-item {
         padding: 0;
         border: 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
 
       .skill-card + .skill-card,

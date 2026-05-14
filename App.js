@@ -53,6 +53,27 @@ const openExternalLink = async (url) => {
   }
 };
 
+const createWebPdfExportNode = (html) => {
+  const parsedDocument = new window.DOMParser().parseFromString(html, "text/html");
+  const exportRoot = document.createElement("div");
+  const styleMarkup = Array.from(parsedDocument.head.querySelectorAll("style"))
+    .map((node) => node.outerHTML)
+    .join("");
+
+  exportRoot.setAttribute("data-cv-pdf-export", "true");
+  exportRoot.style.position = "fixed";
+  exportRoot.style.left = "-20000px";
+  exportRoot.style.top = "0";
+  exportRoot.style.width = "960px";
+  exportRoot.style.opacity = "0";
+  exportRoot.style.pointerEvents = "none";
+  exportRoot.style.backgroundColor = "#ffffff";
+  exportRoot.innerHTML = `${styleMarkup}${parsedDocument.body.innerHTML}`;
+  document.body.appendChild(exportRoot);
+
+  return exportRoot;
+};
+
 export default function App() {
   const [isExporting, setIsExporting] = useState(false);
   const { width } = useWindowDimensions();
@@ -69,18 +90,40 @@ export default function App() {
       const html = createCvHtml(portfolioData);
 
       if (Platform.OS === "web") {
-        const blob = new Blob([html], {
-          type: "text/html;charset=utf-8",
-        });
-        const url = window.URL.createObjectURL(blob);
-        const anchor = document.createElement("a");
+        const html2pdfModule = await import("html2pdf.js");
+        const html2pdf = html2pdfModule.default ?? html2pdfModule;
+        const exportRoot = createWebPdfExportNode(html);
 
-        anchor.href = url;
-        anchor.download = "YeNaing_Modern_CV.html";
-        document.body.appendChild(anchor);
-        anchor.click();
-        document.body.removeChild(anchor);
-        window.URL.revokeObjectURL(url);
+        try {
+          const exportTarget = exportRoot.querySelector(".page") ?? exportRoot;
+
+          await html2pdf()
+            .set({
+              filename: "YeNaing_Modern_CV.pdf",
+              margin: 0,
+              image: {
+                type: "jpeg",
+                quality: 0.98,
+              },
+              html2canvas: {
+                scale: 2,
+                useCORS: true,
+                backgroundColor: "#ffffff",
+              },
+              jsPDF: {
+                unit: "mm",
+                format: "a4",
+                orientation: "portrait",
+              },
+              pagebreak: {
+                mode: ["css", "legacy"],
+              },
+            })
+            .from(exportTarget)
+            .save();
+        } finally {
+          document.body.removeChild(exportRoot);
+        }
       } else {
         const { uri } = await Print.printToFileAsync({ html });
         const canShare = await Sharing.isAvailableAsync();

@@ -8,7 +8,7 @@ Expo-based React Native portfolio app generated from the provided CV. The app is
 - Resume-driven content for profile, skills, experience, and projects
 - `Download CV` action
   - Android/iOS: generates a polished PDF and opens the native share/save flow
-  - Web: downloads a printable HTML version
+  - Web: downloads a PDF file directly
 - A standalone modern CV file at [docs/YeNaing_Modern_CV.html](/home/yenai/Desktop/pofolio/docs/YeNaing_Modern_CV.html)
 
 ## Run locally
