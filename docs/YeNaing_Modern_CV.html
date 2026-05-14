@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ye Naing Modern CV</title>
+    <style>
+      :root {
+        --ink: #0f172a;
+        --muted: #475569;
+        --soft: #f8fafc;
+        --line: #dbe4f0;
+        --accent: #c5f169;
+        --accent-deep: #0b5d50;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 28px;
+        font-family: "Aptos", "Trebuchet MS", "Segoe UI", sans-serif;
+        background: #edf3f7;
+        color: var(--ink);
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
+      }
+
+      .hero {
+        padding: 42px;
+        color: white;
+        background:
+          radial-gradient(circle at top right, rgba(197, 241, 105, 0.35), transparent 34%),
+          linear-gradient(135deg, #08111f 0%, #0f172a 55%, #133b38 100%);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 11px;
+        opacity: 0.74;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 44px;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .hero h2 {
+        margin: 12px 0 16px;
+        color: #d4f8e8;
+        font-size: 18px;
+      }
+
+      .hero p {
+        margin: 0;
+        line-height: 1.7;
+        color: rgba(248, 250, 252, 0.84);
+      }
+
+      .pill-row,
+      .tag-row,
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill-row {
+        margin-top: 18px;
+      }
+
+      .pill,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .pill {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 0.95fr 1.4fr;
+      }
+
+      .sidebar {
+        padding: 28px 30px 34px;
+        background: #f8fbff;
+        border-right: 1px solid var(--line);
+      }
+
+      .content {
+        padding: 28px 34px 34px;
+      }
+
+      .section-title {
+        margin: 0 0 16px;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-deep);
+      }
+
+      .section + .section {
+        margin-top: 28px;
+      }
+
+      .stats {
+        margin-bottom: 28px;
+      }
+
+      .stat {
+        min-width: 112px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #ffffff 0%, #f1f6fb 100%);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 22px;
+      }
+
+      .stat span,
+      .meta,
+      .summary,
+      p,
+      li {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      li + li,
+      .job + .job,
+      .project + .project,
+      .skill + .skill {
+        margin-top: 8px;
+      }
+
+      .job + .job,
+      .project + .project,
+      .skill + .skill {
+        margin-top: 18px;
+      }
+
+      h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+
+      .meta {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent-deep);
+      }
+
+      .job-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .summary {
+        margin: 10px 0;
+      }
+
+      .tag {
+        background: #eff7df;
+        color: #234434;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Software Engineer</p>
+        <h1>Ye Naing</h1>
+        <h2>Software Engineer · Da Nang, Vietnam</h2>
+        <p>
+          Versatile software engineer with 2+ years of experience across backend and full-stack
+          delivery. Strong hands-on background in Laravel, .NET, Go, Linux environments,
+          relational databases, REST integrations, and production support for business-critical
+          systems.
+        </p>
+        <div class="pill-row">
+          <span class="pill">mk.yenaing@gmail.com</span>
+          <span class="pill">0823065356</span>
+          <span class="pill">Backend + Full Stack</span>
+          <span class="pill">.NET / Laravel / Go</span>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="sidebar">
+          <section class="section">
+            <h2 class="section-title">Highlights</h2>
+            <div class="stats">
+              <div class="stat"><strong>2+</strong><span>Years Experience</span></div>
+              <div class="stat"><strong>5</strong><span>Core Products</span></div>
+              <div class="stat"><strong>4</strong><span>Main Stacks</span></div>
+              <div class="stat"><strong>End-to-End</strong><span>SDLC Ownership</span></div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Core Strengths</h2>
+            <ul>
+              <li>REST API design and integration</li>
+              <li>Entity modeling, DTO mapping, and migrations</li>
+              <li>Large-scale data processing and reporting</li>
+              <li>SQL Server, MySQL, and relational design</li>
+              <li>Linux deployment, maintenance, and debugging</li>
+              <li>Excel import/export and validation workflows</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skill">
+              <h3>Backend</h3>
+              <div class="tag-row">
+                <span class="tag">.NET / EF Core</span>
+                <span class="tag">PHP / Laravel</span>
+                <span class="tag">Go</span>
+                <span class="tag">Java</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Swagger / OpenAPI</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Frontend</h3>
+              <div class="tag-row">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">jQuery</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Razor</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Data</h3>
+              <div class="tag-row">
+                <span class="tag">MySQL</span>
+                <span class="tag">SQL Server 2019</span>
+                <span class="tag">Excel Import / Export</span>
+                <span class="tag">Validation Pipelines</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Education</h2>
+            <h3>Bachelor's Degree (AIERP) - Pending</h3>
+            <p>University of Computer Studies, Yangon</p>
+            <p class="meta">Expected graduation: January 2025</p>
+          </section>
+        </aside>
+
+        <div class="content">
+          <section class="section">
+            <h2 class="section-title">Profile</h2>
+            <p>
+              Focused on backend architecture, data-intensive workflows, and shipping stable
+              products through the full SDLC.
+            </p>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="job">
+              <div class="job-top">
+                <div>
+                  <h3>Backend Developer</h3>
+                  <p class="meta">BIM Myanmar · Myanmar</p>
+                </div>
+                <p class="meta">Sep 2024 - Present</p>
+              </div>
+              <p class="summary">
+                Developing and maintaining backend services for enterprise systems built with .NET
+                and Entity Framework Core.
+              </p>
+              <ul>
+                <li>Designed RESTful APIs, DTO mapping flows, validation rules, and migrations.</li>
+                <li>Managed data structures for ticketing, hospital, and CMS workflows.</li>
+                <li>Supported debugging, testing, optimization, and deployment.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-top">
+                <div>
+                  <h3>Software Engineer</h3>
+                  <p class="meta">Medical Action Myanmar · Myanmar</p>
+                </div>
+                <p class="meta">Feb 2023 - Sep 2024</p>
+              </div>
+              <p class="summary">
+                Delivered a full-stack patient reporting platform and supported large data workflows
+                in Laravel on Linux-based infrastructure.
+              </p>
+              <ul>
+                <li>Built frontend and backend features with Laravel, JavaScript, jQuery, and Bootstrap.</li>
+                <li>Owned data quality, reporting logic, secure validation, and database operations.</li>
+                <li>Handled Linux deployment tasks, bug fixes, and performance improvements.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-top">
+                <div>
+                  <h3>Software Developer Trainee</h3>
+                  <p class="meta">BIB Co., Ltd · Myanmar</p>
+                </div>
+                <p class="meta">May 2022 - Aug 2022</p>
+              </div>
+              <p class="summary">
+                Contributed to both product and marketing web experiences during on-the-job training.
+              </p>
+              <ul>
+                <li>Built JobHub features with Java, Spring MVC, Spring Security, MySQL, and Bootstrap.</li>
+                <li>Implemented search and secure upload flows with role-based access control.</li>
+                <li>Delivered responsive frontend work for a cosmetic web page with HTML, CSS, and jQuery.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">Selected Projects</h2>
+
+            <div class="project">
+              <h3>Ticket Announce Management System</h3>
+              <p class="meta">.NET / EF Core · Backend Developer</p>
+              <p class="summary">
+                Built secure backend modules for ticket processing and announcement management with
+                strong attention to data integrity and maintainability.
+              </p>
+            </div>
+
+            <div class="project">
+              <h3>Hospital Management System</h3>
+              <p class="meta">.NET / EF Core · Backend Developer</p>
+              <p class="summary">
+                Implemented backend capabilities for patient management, medical records, billing,
+                and reporting while maintaining consistency across complex entities.
+              </p>
+            </div>
+
+            <div class="project">
+              <h3>Patient Reporting Data Management System</h3>
+              <p class="meta">PHP / Laravel · Software Engineer</p>
+              <p class="summary">
+                Delivered a comprehensive reporting platform with secure validation, large dataset
+                handling, and production support in Linux environments.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
