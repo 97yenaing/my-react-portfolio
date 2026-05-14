@@ -159,8 +159,8 @@ export const portfolioData = {
   education: [
     {
       school: "University of Computer Studies, Yangon",
-      degree: "Bachelor's Degree (AIERP) - Pending",
-      meta: "Expected graduation: January 2025",
+      degree: "Bachelor's Degree (AIERP)",
+      meta: "Graduated Date: January 2025",
     },
   ],
 };
