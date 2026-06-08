@@ -2,7 +2,7 @@ export const portfolioData = {
   profile: {
     name: "Ye Naing",
     title: "Software Engineer",
-    location: "Da Nang, Vietnam",
+    location: "Yangon",
     phone: "0823065356",
     email: "mk.yenaing@gmail.com",
     summary:
