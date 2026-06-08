@@ -3,7 +3,7 @@ export const portfolioData = {
     name: "Ye Naing",
     title: "Software Engineer",
     location: "Yangon",
-    phone: "0823065356",
+    phone: "+959750312681",
     email: "mk.yenaing@gmail.com",
     summary:
       "Versatile software engineer with 2+ years of experience across backend and full-stack delivery. Strong hands-on background in Laravel, .NET, Go, Linux environments, relational databases, REST integrations, and production support for business-critical systems.",
